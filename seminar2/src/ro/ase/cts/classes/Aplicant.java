@@ -1,12 +1,14 @@
 package ro.ase.cts.classes;
 
+import java.util.Arrays;
+
 public abstract class Aplicant{
 	protected String nume;
 	protected String prenume;
 	protected int varsta;
 	protected int punctaj;
-	protected int nr_proiecte;
-	protected String[] denumireProiect;
+	protected int nrProiecte;
+	protected String[] denumiriProiecte;
 	
 	
 	public String getNume() {
@@ -27,44 +29,55 @@ public abstract class Aplicant{
 	public void setVarsta(int varsta) {
 		this.varsta = varsta;
 	}
-	public void statut(){
+	
+	public void afiseazaStatut(Proiect proiect){
+		System.out.println("Aplicantul "+nume+" "+prenume);
 		if(punctaj>80)
-			System.out.println("Aplicantul "+nume+" "+prenume+" a fost acceptat.");
+			System.out.println(" a fost acceptat.");
 		else
-			System.out.println("Aplicantul "+nume+" "+prenume+" nu a fost acceptat.");
+			System.out.println(" nu a fost acceptat.");
 		}
+	
+	
 	public int getPunctaj() {
 		return punctaj;
 	}
+	
 	public void setPunctaj(int punctaj) {
 		this.punctaj = punctaj;
 	}
 	
 	
-
-	
 	public Aplicant() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Aplicant(String nume, String prenume, int varsta, int punctaj, int nr_proiecte, String[] denumireProiect) {
+	public Aplicant(String nume, String prenume, int varsta, int punctaj, int nrProiecte, String[] denumiriProiecte) {
 		super();
 		this.nume = nume;
 		this.prenume = prenume;
 		this.varsta = varsta;
 		this.punctaj = punctaj;
-		this.nr_proiecte = nr_proiecte;
-		this.denumireProiect = denumireProiect;
+		this.nrProiecte = nrProiecte;
+		this.denumiriProiecte = denumiriProiecte;
 	}
-	public int getNr_proiecte() {
-		return nr_proiecte;
+	public int getNrProiecte() {
+		return nrProiecte;
 	}
-	public void setNr_proiecte(int nr_proiecte, String[] denumireProiect) {
-		this.nr_proiecte = nr_proiecte;
-		
-		
-			this.denumireProiect=denumireProiect;
+	public void setNrProiecte(int nrProiecte, String[] denumiriProiecte) {
+		this.nrProiecte = nrProiecte;
+		for(int i=0; i<nrProiecte; i++) {
+			this.denumiriProiecte=denumiriProiecte;
+		}
 		
 	}
+	
+	public abstract float getSumaFinantata();
+	@Override
+	public String toString() {
+		return "Aplicant [nume=" + nume + ", prenume=" + prenume + ", varsta=" + varsta + ", punctaj=" + punctaj
+				+ ", nrProiecte=" + nrProiecte + ", denumiriProiecte=" + Arrays.toString(denumiriProiecte) + "]";
+	}
+
 
 }
