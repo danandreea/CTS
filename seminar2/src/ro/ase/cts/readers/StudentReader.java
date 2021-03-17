@@ -31,7 +31,7 @@ public class StudentReader extends AplicantReader{
 			int anStudii = input.nextInt();
 			String facultate = input.next();
 			
-			student.setAn_studii(anStudii);
+			student.setAnStudii(anStudii);
 			student.setFacultate(facultate);
 			
 			studenti.add(student);
