@@ -25,7 +25,7 @@ public class Program {
 		System.out.println(clinicaVeterinara1.toString());
 		System.out.println(clinicaVeterinara2.toString());
 		
-		clinicaVeterinara1.setNume("Clinica 2");
+		clinicaVeterinara1.setNume("Clinica 1");
 		clinicaVeterinara2.setNumarMedici(100);
 		
 		System.out.println(clinicaVeterinara1.toString());
