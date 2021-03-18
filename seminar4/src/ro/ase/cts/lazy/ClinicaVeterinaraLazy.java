@@ -22,7 +22,7 @@ public class ClinicaVeterinaraLazy {
 	}
 	
 	
-	public static ClinicaVeterinaraLazy getInstance(String nume, String adresa, int numarMedici, float buget)
+	public static synchronized ClinicaVeterinaraLazy getInstance(String nume, String adresa, int numarMedici, float buget)
 	{
 		if(clinica==null)
 		{
