@@ -1,4 +1,4 @@
-package ro.ase.cts.classes;
+package ro.ase.cts.Command.classes;
 
 public abstract class Command {
 

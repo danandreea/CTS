@@ -1,11 +1,11 @@
-package ro.ase.cts.main;
+package ro.ase.cts.Command.main;
 
 
-import ro.ase.cts.classes.Constituire;
-import ro.ase.cts.classes.ContBancar;
-import ro.ase.cts.classes.Depunere;
-import ro.ase.cts.classes.ManagerComenzi;
-import ro.ase.cts.classes.Retragere;
+import ro.ase.cts.Command.classes.Constituire;
+import ro.ase.cts.Command.classes.ContBancar;
+import ro.ase.cts.Command.classes.Depunere;
+import ro.ase.cts.Command.classes.ManagerComenzi;
+import ro.ase.cts.Command.classes.Retragere;
 
 public class Program {
 
