@@ -12,13 +12,10 @@ import clase.IStudent;
 import suite.categorii.TesteNormale;
 import suite.categorii.TesteUrgente;
 
-public class TestCaseDummy {
+public class GrupaTest {
 
-	private IStudent studentDummy;
-	
 	@Before
 	public void setUp() throws Exception {
-		studentDummy=new StudentDummy();
 	}
 
 	@After
@@ -27,26 +24,24 @@ public class TestCaseDummy {
 
 	@Category(TesteUrgente.class)
 	@Test
-	public void testAdaugaStudent() {
+	public void promovabilitateFaraRestanteTest() {
+		FakeStudent studentFake=new FakeStudent();
+		studentFake.setAreRestanta(false);
 		Grupa grupa=new Grupa(1079);
-		grupa.adaugaStudent(studentDummy);
+		grupa.adaugaStudent(studentFake);
 		
-		assertEquals(1, grupa.getListaStudenti().size());
+		assertEquals(1, grupa.getPromovabilitate(), 0.01);
 	}
 	
 	@Category(TesteNormale.class)
 	@Test
-	public void testAdaugaStudentCardinality() {
+	public void promovabilitateCuRestanteTest() {
+		FakeStudent studentFake=new FakeStudent();
+		studentFake.setAreRestanta(true);
 		Grupa grupa=new Grupa(1079);
-
-		IStudent studentDummy2=new StudentDummy();
-		IStudent studentDummy3=new StudentDummy();
+		grupa.adaugaStudent(studentFake);
 		
-		grupa.adaugaStudent(studentDummy);
-		grupa.adaugaStudent(studentDummy2);
-		grupa.adaugaStudent(studentDummy3);
-		assertEquals(3, grupa.getListaStudenti().size());
+		assertEquals(0, grupa.getPromovabilitate(), 0.01);
 	}
-
 
 }

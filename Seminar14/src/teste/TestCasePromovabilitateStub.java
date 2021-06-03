@@ -5,9 +5,12 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import clase.Grupa;
 import clase.IStudent;
+import suite.categorii.TesteGetPromovabilitate;
+import suite.categorii.TesteUrgente;
 
 public class TestCasePromovabilitateStub {
 
@@ -21,6 +24,7 @@ public class TestCasePromovabilitateStub {
 	public void tearDown() throws Exception {
 	}
 
+	@Category({TesteUrgente.class, TesteGetPromovabilitate.class})
 	@Test
 	public void testGetPromovabillitate() {
 		Grupa grupa=new Grupa(1079);
